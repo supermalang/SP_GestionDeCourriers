@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="e91fbbdf-b8f9-4167-8928-f4ca3ad4e861" 
+        solutionId="e91fbbdf-b8f9-4167-8928-f4ca3ad4e861" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="GestionElectroniqueDeCourriers"
+        sharePointProductVersion="15.0">
+</package>

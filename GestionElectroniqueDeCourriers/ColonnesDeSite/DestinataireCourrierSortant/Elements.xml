@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{39bdbca0-dc31-4cc6-b1fe-e8b54fc04a15}"
+       Name="DestinataireCourrierSortant"
+       DisplayName="Destinataire Courrier Sortant"
+       Type="Text"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>

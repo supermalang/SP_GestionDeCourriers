@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{77326c57-9e4b-4866-a467-e158f7e125ce}"
+       Name="EmplacementPhysiqueCourrier"
+       DisplayName="Emplacement Physique Courrier"
+       Type="Text"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>

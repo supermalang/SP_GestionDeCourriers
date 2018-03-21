@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{8e45ee1c-3408-4a35-b63d-8fcb97031d64}"
+       Name="ObservationsCourrier"
+       DisplayName="Observations Courrier"
+       Type="Text"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>

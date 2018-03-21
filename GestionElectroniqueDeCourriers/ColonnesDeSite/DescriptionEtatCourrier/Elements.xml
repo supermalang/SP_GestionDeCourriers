@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{b972e0f0-65f5-4667-8ab8-40b92e1f0961}"
+       Name="DescriptionEtatCourrier"
+       DisplayName="Description Etat Courrier"
+       Type="Text"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{a7dc83bf-03ec-4a42-a045-3b80887dfdaf}"
+       Name="ReferenceExterneCourrier"
+       DisplayName="Reference Externe Courrier"
+       Type="Text"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>

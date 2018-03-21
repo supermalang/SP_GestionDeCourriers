@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a12488a2-d239-4ad2-855b-795dba81d7b8" featureId="a12488a2-d239-4ad2-855b-795dba81d7b8" imageUrl="" scope="Site" solutionId="00000000-0000-0000-0000-000000000000" title="GestionElectroniqueDeCourriers Feature1" version="" deploymentPath="$SharePoint.Project.FileNameWithoutExtension$_$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel" />

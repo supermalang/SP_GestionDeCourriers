@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{bb958475-fd3a-4e70-845f-b61406d0cb1c}"
+       Name="ObjetCourrier"
+       DisplayName="Objet du Courrier"
+       Type="Text"
+       Required="TRUE"
+       Group="Gestion Electronique de Courriers - IBSN">
+  </Field>
+</Elements>

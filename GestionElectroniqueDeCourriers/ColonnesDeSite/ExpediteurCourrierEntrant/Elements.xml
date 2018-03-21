@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{11f33f7b-b2f9-4fc7-a08a-5da6351cb929}"
+       Name="ExpediteurCourrierEntrant"
+       DisplayName="Expediteur Courrier Entrant"
+       Type="Text"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+</Elements>

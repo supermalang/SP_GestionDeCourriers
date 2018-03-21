@@ -46,11 +46,15 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Activities" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -63,6 +67,69 @@
   <ItemGroup>
     <None Include="BreakItemPermissions\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{e0d79cd3-c69b-4755-8e80-326baaf8f970}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\AdresseDestinataire\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{def0a07e-54ac-49fd-8577-fe96a3b52f15}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\AdresseExpediteur\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8af46f06-d230-4e59-a2ae-5b899c8a7834}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\DateCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e18ec818-a652-4b66-afc8-ca61c8372cbb}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\DateEnvoiCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3e5bc740-f4d8-4fcb-ab93-87f871187e24}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\DateReceptionCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d73411e0-bc0f-446a-9e49-b90b5e4f8910}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\DescriptionEtatCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9c27fb45-129e-48c3-a319-16b066a6b523}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\DestinataireCourrierEntrant\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b8184210-818f-458d-b996-e0e8bd1a725e}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\DestinataireCourrierSortant\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{eaeb5d61-3ce3-4e3c-be9f-49ba6a2b0740}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\DestinataireCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{49c2560c-0720-4728-9e97-3551c3bb6229}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\DestinataireEnCopieCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{45322fa7-7d0e-49c8-9866-903ef199e8df}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\EmplacementPhysiqueCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{949b4cb9-ae14-4d6a-b3fc-834b4cc1d3d5}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\EtatCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7dec893b-cce8-4ee3-84b3-452dc7b63f17}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\ExpediteurCourrierEntrant\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{50b4b886-35b7-4d22-863c-02936f93e268}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\ExpediteurCourrierSortant\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e7f2dbc6-166c-427f-8713-61bb232f9851}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\ExpediteurCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a0998191-7c18-4411-b4e3-6e67baff813b}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\NatureCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7a19686b-51db-48c3-b567-a4b36826fe43}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\ObjetCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{23929470-83d5-40cf-bf7d-3f378c23924e}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\ObservationsCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{95d70fac-96ec-4913-95b8-235961dbb994}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\ReferenceExterneCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a4946fa7-c3f5-456f-8df0-a5e8365db7b9}</SharePointProjectItemId>
+    </None>
+    <None Include="ColonnesDeSite\ReferenceInterneCourrier\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f2207efc-596b-4e93-9f3b-3fd61ab06e75}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{d4cef857-e41f-4e6b-9690-a6569e607d89}</FeatureId>
     </None>
     <None Include="Features\GestionElectroniqueDeCourriers\GestionElectroniqueDeCourriers.feature">
       <FeatureId>{520006c9-5ca8-4700-84d8-4766366cab6f}</FeatureId>
@@ -80,6 +147,29 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="ColonnesDeSite\AdresseDestinataire\Elements.xml" />
+    <Content Include="ColonnesDeSite\AdresseExpediteur\Elements.xml" />
+    <Content Include="ColonnesDeSite\DateCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\DateEnvoiCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\DateReceptionCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\DescriptionEtatCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\DestinataireCourrierEntrant\Elements.xml" />
+    <Content Include="ColonnesDeSite\DestinataireCourrierSortant\Elements.xml" />
+    <Content Include="ColonnesDeSite\DestinataireCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\DestinataireEnCopieCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\EmplacementPhysiqueCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\EtatCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\ExpediteurCourrierEntrant\Elements.xml" />
+    <Content Include="ColonnesDeSite\ExpediteurCourrierSortant\Elements.xml" />
+    <Content Include="ColonnesDeSite\ExpediteurCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\NatureCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\ObjetCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\ObservationsCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\ReferenceExterneCourrier\Elements.xml" />
+    <Content Include="ColonnesDeSite\ReferenceInterneCourrier\Elements.xml" />
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
     <Content Include="SetItemPermission\Elements.xml" />
     <None Include="SetItemPermission\SetItemPermission.actions4">
       <SubType>Designer</SubType>

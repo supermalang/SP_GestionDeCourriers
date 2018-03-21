@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="BreakItemPermissions" Url="Workflows/BreaItemPermissions">
+    <File Url="BreaItemPermissions.xaml" Type="Ghostable" DoGUIDFixUp="TRUE" Path="BreakItemPermissions\BreaItemPermissions.xaml" />
+    <File Url="BreaItemPermissions.actions4" Type="Ghostable" Path="BreakItemPermissions\BreaItemPermissions.actions4" />
+  </Module>
+</Elements>

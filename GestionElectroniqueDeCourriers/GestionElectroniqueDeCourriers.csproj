@@ -40,10 +40,18 @@
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Activities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Activities.Design, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.DesignTime.Activities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.SharePoint" />
@@ -53,6 +61,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="BreakItemPermissions\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e0d79cd3-c69b-4755-8e80-326baaf8f970}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\GestionElectroniqueDeCourriers\GestionElectroniqueDeCourriers.feature">
+      <FeatureId>{520006c9-5ca8-4700-84d8-4766366cab6f}</FeatureId>
+    </None>
     <None Include="key.snk" />
     <None Include="Package\Package.package">
       <PackageId>{e91fbbdf-b8f9-4167-8928-f4ca3ad4e861}</PackageId>
@@ -60,9 +74,33 @@
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
+    <None Include="SetItemPermission\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9a0727ba-6132-4e73-b2b8-46076220b0a6}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SetItemPermission\Elements.xml" />
+    <None Include="SetItemPermission\SetItemPermission.actions4">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BreakItemPermissions\BreaItemPermissions.actions4" />
+    <Content Include="BreakItemPermissions\Elements.xml" />
+    <Content Include="Features\GestionElectroniqueDeCourriers\GestionElectroniqueDeCourriers.Template.xml">
+      <DependentUpon>GestionElectroniqueDeCourriers.feature</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\" />
+    <XamlAppDef Include="BreakItemPermissions\BreaItemPermissions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="SetItemPermission\SetItemPermission.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -1,0 +1,275 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="GestionElectroniqueDeCourriers.SetItemPermission"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:msdad="clr-namespace:Microsoft.SharePoint.DesignTime.Activities.Design;assembly=Microsoft.SharePoint.DesignTime.Activities.Design"
+ xmlns:p="http://schemas.microsoft.com/workflow/2012/07/xaml/activities"
+ xmlns:p1="wf://workflow.windows.net/$Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sn="clr-namespace:System.Net;assembly=System"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="SetPermissionForUsers" Type="InArgument(x:String)" />
+    <x:Property Name="PermissionName" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>GestionElectroniqueDeCourriers.SetItemPermission_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Microsoft.Activities</x:String>
+      <x:String>System.Net</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.SharePoint.DesignTime.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>Microsoft.SharePoint</AssemblyReference>
+      <AssemblyReference>Microsoft.SharePoint.Client.ServerRuntime</AssemblyReference>
+      <AssemblyReference>Microsoft.Activities.Design</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>GestionElectroniqueDeCourriers</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="SiteURL" />
+      <Variable x:TypeArguments="x:Int32" Name="RoleDefinitionID" />
+      <Variable x:TypeArguments="p:DynamicValue" Name="_apiRequestHeaders" />
+      <Variable x:TypeArguments="x:String" Name="ListName" />
+      <Variable x:TypeArguments="x:Int32" Name="ItemID" />
+    </Sequence.Variables>
+    <Sequence DisplayName="Sequence -Workflow Context" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <p1:LookupWorkflowContextProperty DisplayName="Lookup Get Site URL" sap2010:WorkflowViewState.IdRef="LookupWorkflowContextProperty_2" PropertyName="CurrentWebUrl">
+        <p1:LookupWorkflowContextProperty.Result>
+          <OutArgument x:TypeArguments="x:String">
+            <mca:CSharpReference x:TypeArguments="x:String">SiteURL</mca:CSharpReference>
+          </OutArgument>
+        </p1:LookupWorkflowContextProperty.Result>
+      </p1:LookupWorkflowContextProperty>
+      <p1:LookupWorkflowContextProperty DisplayName="Lookup Get List Name" sap2010:WorkflowViewState.IdRef="LookupWorkflowContextProperty_3" PropertyName="ListName">
+        <p1:LookupWorkflowContextProperty.Result>
+          <OutArgument x:TypeArguments="x:String">
+            <mca:CSharpReference x:TypeArguments="x:String">ListName</mca:CSharpReference>
+          </OutArgument>
+        </p1:LookupWorkflowContextProperty.Result>
+      </p1:LookupWorkflowContextProperty>
+      <p1:GetCurrentItemId sap2010:WorkflowViewState.IdRef="GetCurrentItemId_1">
+        <p1:GetCurrentItemId.Result>
+          <OutArgument x:TypeArguments="x:Int32">
+            <mca:CSharpReference x:TypeArguments="x:Int32">ItemID</mca:CSharpReference>
+          </OutArgument>
+        </p1:GetCurrentItemId.Result>
+      </p1:GetCurrentItemId>
+    </Sequence>
+    <Sequence DisplayName="Sequence - Get Role Definition ID" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="_apiURL" />
+        <Variable x:TypeArguments="p:DynamicValue" Name="_apiResponseHeaders" />
+        <Variable x:TypeArguments="sn:HttpStatusCode" Name="_apiResponseStatusCode" />
+        <Variable x:TypeArguments="p:DynamicValue" Name="_apiResponseContent" />
+      </Sequence.Variables>
+      <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">
+            <mca:CSharpReference x:TypeArguments="x:String">_apiURL</mca:CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">
+            <mca:CSharpValue x:TypeArguments="x:String">SiteURL+ "/_api/web/roledefinitions?$filter=Name eq '"+PermissionName+"'&amp;$select=ID,Name"</mca:CSharpValue>
+          </InArgument>
+        </Assign.Value>
+      </Assign>
+      <p:BuildDynamicValue DisplayName="Build Request Headers" sap2010:WorkflowViewState.IdRef="BuildDynamicValue_1">
+        <p:BuildDynamicValue.Result>
+          <InOutArgument x:TypeArguments="p:DynamicValue">
+            <mca:CSharpReference x:TypeArguments="p:DynamicValue">_apiRequestHeaders</mca:CSharpReference>
+          </InOutArgument>
+        </p:BuildDynamicValue.Result>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument">
+          <InArgument x:TypeArguments="x:String" x:Key="Accept">Application/json;odata=verbose</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Content-Type">Application/json;odata=verbose</InArgument>
+        </scg:Dictionary>
+      </p:BuildDynamicValue>
+      <p:HttpSend sap2010:WorkflowViewState.IdRef="HttpSend_1" Method="GET">
+        <p:HttpSend.RequestHeaders>
+          <InArgument x:TypeArguments="p:DynamicValue">
+            <mca:CSharpValue x:TypeArguments="p:DynamicValue">_apiRequestHeaders</mca:CSharpValue>
+          </InArgument>
+        </p:HttpSend.RequestHeaders>
+        <p:HttpSend.ResponseContent>
+          <OutArgument x:TypeArguments="p:DynamicValue">
+            <mca:CSharpReference x:TypeArguments="p:DynamicValue">_apiResponseContent</mca:CSharpReference>
+          </OutArgument>
+        </p:HttpSend.ResponseContent>
+        <p:HttpSend.ResponseHeaders>
+          <OutArgument x:TypeArguments="p:DynamicValue">
+            <mca:CSharpReference x:TypeArguments="p:DynamicValue">_apiResponseHeaders</mca:CSharpReference>
+          </OutArgument>
+        </p:HttpSend.ResponseHeaders>
+        <p:HttpSend.ResponseStatusCode>
+          <OutArgument x:TypeArguments="sn:HttpStatusCode">
+            <mca:CSharpReference x:TypeArguments="sn:HttpStatusCode">_apiResponseStatusCode</mca:CSharpReference>
+          </OutArgument>
+        </p:HttpSend.ResponseStatusCode>
+        <p:HttpSend.Uri>
+          <InArgument x:TypeArguments="x:String">
+            <mca:CSharpValue x:TypeArguments="x:String">_apiURL</mca:CSharpValue>
+          </InArgument>
+        </p:HttpSend.Uri>
+      </p:HttpSend>
+      <p:GetODataProperties DisplayName="GetDynamicValueProperties" sap2010:WorkflowViewState.IdRef="GetODataProperties_1">
+        <p:GetODataProperties.Source>
+          <InArgument x:TypeArguments="p:DynamicValue">
+            <mca:CSharpValue x:TypeArguments="p:DynamicValue">_apiResponseContent</mca:CSharpValue>
+          </InArgument>
+        </p:GetODataProperties.Source>
+        <scg:Dictionary x:TypeArguments="x:String, OutArgument">
+          <OutArgument x:TypeArguments="x:Int32" x:Key="d/results/(0)/Id">
+            <mca:CSharpReference x:TypeArguments="x:Int32">RoleDefinitionID</mca:CSharpReference>
+          </OutArgument>
+        </scg:Dictionary>
+      </p:GetODataProperties>
+    </Sequence>
+    <Sequence DisplayName="Sequence - Set Item Permissions" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="UserID" />
+        <Variable x:TypeArguments="x:String" Name="_apiRequestURL" />
+        <Variable x:TypeArguments="x:String" Name="_apiResponseContent" />
+        <Variable x:TypeArguments="sn:HttpStatusCode" Name="_apiResponseStatusCode" />
+        <Variable x:TypeArguments="p:DynamicValue" Name="_apiResponseHeaders" />
+      </Sequence.Variables>
+      <p1:LookupSPPrincipalId AddToUserInfoList="True" sap2010:WorkflowViewState.IdRef="LookupSPPrincipalId_1">
+        <p1:LookupSPPrincipalId.Result>
+          <OutArgument x:TypeArguments="x:Int32">
+            <mca:CSharpReference x:TypeArguments="x:Int32">UserID</mca:CSharpReference>
+          </OutArgument>
+        </p1:LookupSPPrincipalId.Result>
+        <p1:LookupSPPrincipalId.UserName>
+          <InArgument x:TypeArguments="x:String">
+            <mca:CSharpValue x:TypeArguments="x:String">SetPermissionForUsers</mca:CSharpValue>
+          </InArgument>
+        </p1:LookupSPPrincipalId.UserName>
+      </p1:LookupSPPrincipalId>
+      <Assign sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">
+            <mca:CSharpReference x:TypeArguments="x:String">_apiRequestURL</mca:CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">
+            <mca:CSharpValue x:TypeArguments="x:String">SiteURL+ "/_api/web/lists/getByTitle('"+ListName+"')/items("+ItemID+")/roleassignments/addroleassignment(principalid="+UserID+",roleDefId="+RoleDefinitionID+")"</mca:CSharpValue>
+          </InArgument>
+        </Assign.Value>
+      </Assign>
+      <p:HttpSend sap2010:WorkflowViewState.IdRef="HttpSend_2" Method="POST">
+        <p:HttpSend.RequestHeaders>
+          <InArgument x:TypeArguments="p:DynamicValue">
+            <mca:CSharpValue x:TypeArguments="p:DynamicValue">_apiRequestHeaders</mca:CSharpValue>
+          </InArgument>
+        </p:HttpSend.RequestHeaders>
+        <p:HttpSend.ResponseContent>
+          <OutArgument x:TypeArguments="x:String">
+            <mca:CSharpReference x:TypeArguments="x:String">_apiResponseContent</mca:CSharpReference>
+          </OutArgument>
+        </p:HttpSend.ResponseContent>
+        <p:HttpSend.ResponseHeaders>
+          <OutArgument x:TypeArguments="p:DynamicValue">
+            <mca:CSharpReference x:TypeArguments="p:DynamicValue">_apiResponseHeaders</mca:CSharpReference>
+          </OutArgument>
+        </p:HttpSend.ResponseHeaders>
+        <p:HttpSend.ResponseStatusCode>
+          <OutArgument x:TypeArguments="sn:HttpStatusCode">
+            <mca:CSharpReference x:TypeArguments="sn:HttpStatusCode">_apiResponseStatusCode</mca:CSharpReference>
+          </OutArgument>
+        </p:HttpSend.ResponseStatusCode>
+        <p:HttpSend.Uri>
+          <InArgument x:TypeArguments="x:String">
+            <mca:CSharpValue x:TypeArguments="x:String">_apiRequestURL</mca:CSharpValue>
+          </InArgument>
+        </p:HttpSend.Uri>
+      </p:HttpSend>
+    </Sequence>
+    <sads:DebugSymbol.Symbol>d4QBQzpcVXNlcnNcc3BhZG1pblxzb3VyY2VccmVwb3NcR2VzdGlvbkVsZWN0cm9uaXF1ZURlQ291cnJpZXJzXEdlc3Rpb25FbGVjdHJvbmlxdWVEZUNvdXJyaWVyc1xTZXRJdGVtUGVybWlzc2lvblxTZXRJdGVtUGVybWlzc2lvbi54YW1sKzUD1wEOAgEBPQVTEAMB/QFUBZkBEAIBfZoBBdUBEAIBAj4HRCoDAZECRQdLKgMBhwJMB1IdAwH+AVsHZhADAeQBZwdxHQMB1QFyB4wBFAMBlwGNAQeYAR4CAX6iAQetASACAWGuAQe5ARACAUa6AQfUARQCAQNBDUFaAwGTAj6aAT6pAQMBkgJIDUhbAwGJAkWbAUWlAQMBiAJPDU9YAwH/AWMNY6gBAwHxAV4NXloDAeUBbkFuXwMB4wFqDWprAwHXAW9Hb2UDAdYBdQ11YwMByQGEAQ2EAXIDAb0BiQENiQFSAwGxAXoNemwDAaUBfw1/bAMBmQFyR3JMAwGYAZABDZABZAMBiwGVAQ2VAWICAX+iATGiATcCAXyqAQ2qAWACAW+lAQ2lAVgCAWK2AQ22AesBAgFUsQENsQFhAgFHvQENvQFjAgE5zAENzAFyAgEs0QEN0QFZAgEfwgENwgFmAgESxwENxwFsAgEFugFHugFNAgEE</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="LookupWorkflowContextProperty_2" sap:VirtualizedContainerService.HintSize="200,68">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <scg:Dictionary x:TypeArguments="x:String, msdad:ViewStateNameValue" x:Key="SPLocalizedDisplayNames">
+              <msdad:ViewStateNameValue x:Key="PropertyName" DisplayName="URL actuelle du site" Value="CurrentWebUrl" />
+            </scg:Dictionary>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LookupWorkflowContextProperty_3" sap:VirtualizedContainerService.HintSize="200,68">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <scg:Dictionary x:TypeArguments="x:String, msdad:ViewStateNameValue" x:Key="SPLocalizedDisplayNames">
+              <msdad:ViewStateNameValue x:Key="PropertyName" DisplayName="Nom de liste" Value="ListName" />
+            </scg:Dictionary>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="GetCurrentItemId_1" sap:VirtualizedContainerService.HintSize="200,68" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="269,408">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="247,62" />
+      <sap2010:ViewStateData Id="BuildDynamicValue_1" sap:VirtualizedContainerService.HintSize="247,92" />
+      <sap2010:ViewStateData Id="HttpSend_1" sap:VirtualizedContainerService.HintSize="247,62" />
+      <sap2010:ViewStateData Id="GetODataProperties_1" sap:VirtualizedContainerService.HintSize="247,92" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="269,552">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LookupSPPrincipalId_1" sap:VirtualizedContainerService.HintSize="242,68" />
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="HttpSend_2" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="269,396">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="291,1560">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="GestionElectroniqueDeCourriers.SetItemPermission_1" sap:VirtualizedContainerService.HintSize="284,674" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

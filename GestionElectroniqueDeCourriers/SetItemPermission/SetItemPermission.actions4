@@ -1,0 +1,11 @@
+﻿<Action Name="Définir l'autorisation d'accès" ClassName="GestionElectroniqueDeCourriers.SetItemPermission" Category="Gestion De Courrier - IBSN" AppliesTo="all">
+  <RuleDesigner Sentence="Définir le niveau d'autorisation %1 pour l'utilisateur %2 sur l'élément en cours">
+    <FieldBind Field="PermissionName" Text="Nom du niveau d'autorisation" Id="1" DesignerType="TextArea" />
+    <FieldBind Field="SetPermissionForUsers" Text="Utilisateurs ciblés" Id="2" DesignerType="Person" />
+  </RuleDesigner>
+
+  <Parameters>
+    <Parameter Name="PermissionName" Type="System.String" Direction="In" DesignerType="TextArea" />
+    <Parameter Name="SetPermissionForUsers" Type="System.String" Direction="In" DesignerType="SinglePerson" />
+  </Parameters>
+</Action>

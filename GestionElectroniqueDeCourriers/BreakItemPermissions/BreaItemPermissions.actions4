@@ -1,0 +1,5 @@
+﻿<Action Name="Arrêter l'héritage des autorisations" ClassName="GestionElectroniqueDeCourriers.BreaItemPermissions" Category="Gestion De Courrier - IBSN" AppliesTo="all">
+  <RuleDesigner Sentence="Arrêter l'héritage des autorisations">
+    <!-- Définir les widgets de l'interface utilisateur que SharePoint Designer doit utiliser pour configurer cette action -->
+  </RuleDesigner>
+</Action>
